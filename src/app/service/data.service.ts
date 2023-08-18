@@ -6,5 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
+
+  getData(){
+    return this.httpClient.get('127.0.0.1:8000/api/gender');
+  }
 }
