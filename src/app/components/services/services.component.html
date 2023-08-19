@@ -1,1 +1,74 @@
-<p>services works!</p>
+<div class="row">
+    <div class="col-md-4">
+       <div class="card">
+        <div class="card-header">
+            New Patient
+        </div>
+
+        <div class="card-body">
+            <form class="form" (ngSubmit)="insertData()">
+                <div class="form-group mt-2 mb-2">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control"/>
+                </div>
+    
+                <div class="form-group mt-2 mb-2">
+                    <label>Date of Birth</label>
+                    <input type="date" class="form-control"/>
+                </div>
+    
+                <div class="form-group mt-2 mb-2">
+                    <label>Gender</label>
+                    <select class="form-control">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group mt-2 mb-2">
+                    <label>Service</label>
+                    <select class="form-control">
+                        <option>Inpatient</option>
+                        <option>Outpatient</option>
+                    </select>
+                </div>
+
+                <div class="form-group mt-2 mb-2">
+                    <label>General Comments</label>
+                    <textarea class="form-control"></textarea>
+                </div>
+
+                <div class="form-group mt-2 mb-2">
+                    <input type="submit" class="btn btn-md btn-primary" value="Save patient"/>
+                </div>
+    
+            </form>
+        </div>
+
+       </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table stripped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">General Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of services.data">
+                    <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>jj</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
