@@ -9,33 +9,31 @@
             <form class="form" (ngSubmit)="insertData()">
                 <div class="form-group mt-2 mb-2">
                     <label>Full Name</label>
-                    <input type="text" class="form-control"/>
+                    <input type="text" class="form-control" [(ngModel)]="patient.name" name="name"/>
                 </div>
     
                 <div class="form-group mt-2 mb-2">
                     <label>Date of Birth</label>
-                    <input type="date" class="form-control"/>
+                    <input type="date" class="form-control"  [(ngModel)]="patient.dob" name="dob"/>
                 </div>
     
                 <div class="form-group mt-2 mb-2">
                     <label>Gender</label>
-                    <select class="form-control">
-                        <option>Male</option>
-                        <option>Female</option>
+                    <select class="form-control"  [(ngModel)]="patient.gender"  name="gender"  >
+                        <option *ngFor="let item of genders.data" value="{{item.id}}">{{item.gender}}</option>
                     </select>
                 </div>
 
                 <div class="form-group mt-2 mb-2">
                     <label>Service</label>
-                    <select class="form-control">
-                        <option>Inpatient</option>
-                        <option>Outpatient</option>
+                    <select class="form-control"  [(ngModel)]="patient.service"  name="service" >
+                        <option *ngFor="let item of services.data" value="{{item.id}}" >{{item.service}}</option>
                     </select>
                 </div>
 
                 <div class="form-group mt-2 mb-2">
                     <label>General Comments</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control" [(ngModel)]="patient.comments"  name="comments" ></textarea>
                 </div>
 
                 <div class="form-group mt-2 mb-2">
@@ -52,7 +50,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Date</th>
+                    <th scope="col">Date of Birth</th>
                     <th scope="col">Name</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Service</th>
@@ -60,13 +58,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of services.data">
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>jj</td>
-                    <td></td>
+                <tr *ngFor="let item of patientServices">
+                    <th scope="row">{{item.index}}</th>
+                    <td>{{item.dob}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.gender}}</td>
+                    <td>{{item.service}}</td>
+                    <td>{{item.general_comments}}</td>
                 </tr>
             </tbody>
         </table>
